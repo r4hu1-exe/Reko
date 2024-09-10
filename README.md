@@ -1,3 +1,33 @@
+```shell
+#!/bin/bash
+
+#---------------------------------------------- Header
+echo -e "$blue
+   _____       __                          __ __
+ ______    _____  __   ___  ____    
+(   __ \  / ___/ () ) / __)/ __ \   
+ ) (__) )( (__   ( (_/ /  / /  \ \  
+(    __/  ) __)  ()   (  ( ()  () ) 
+ ) \ \  _( (     () /\ \ ( ()  () ) 
+( ( \ \_))\ \___ ( (  \ \ \ \__/ /  
+ )_) \__/  \____\()_)  \_\ \____/ -r4hu1.exe"
+
+echo " "
+
+# Initialize variables
+domain=""
+inputdirectory=""
+
+#---------------------------------------------- Help and Options
+for arg in "$@"
+do
+    case $arg in
+        -h|--help)
+        echo -e "$lightblue
+
+
+
+
 # Recon Script
 
 ## Overview
