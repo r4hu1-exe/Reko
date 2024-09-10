@@ -1,38 +1,8 @@
-```shell
-#!/bin/bash
-
-#---------------------------------------------- Header
-echo -e "$blue
-   _____       __                          __ __
- ______    _____  __   ___  ____    
-(   __ \  / ___/ () ) / __)/ __ \   
- ) (__) )( (__   ( (_/ /  / /  \ \  
-(    __/  ) __)  ()   (  ( ()  () ) 
- ) \ \  _( (     () /\ \ ( ()  () ) 
-( ( \ \_))\ \___ ( (  \ \ \ \__/ /  
- )_) \__/  \____\()_)  \_\ \____/ -r4hu1.exe"
-
-echo " "
-
-# Initialize variables
-domain=""
-inputdirectory=""
-
-#---------------------------------------------- Help and Options
-for arg in "$@"
-do
-    case $arg in
-        -h|--help)
-        echo -e "$lightblue
-
-
-
-
 # Recon Script
 
 ## Overview
 
-The Recon Script is a shell script designed to perform domain reconnaissance and enumeration using popular tools like `subfinder`, `httpx`, `assetfinder`, and `amass`. This script helps in gathering subdomains, verifying HTTP responses, and identifying additional assets related to a target domain.
+The Recon Script is a shell script designed to perform domain reconnaissance and enumeration using popular tools like `subfinder`, `httpx`, `assetfinder`, `amass`, `waybackurls`, and `cewl`. This script helps in gathering subdomains, verifying HTTP responses, identifying additional assets related to a target domain, and generating wordlists.
 
 ## Tools Used
 
@@ -40,12 +10,16 @@ The Recon Script is a shell script designed to perform domain reconnaissance and
 - **[httpx](https://github.com/projectdiscovery/httpx)**: A fast and multi-purpose HTTP toolkit that can be used to probe for live hosts and HTTP services.
 - **[assetfinder](https://github.com/tomnomnom/assetfinder)**: A tool to find subdomains for a given domain.
 - **[amass](https://github.com/OWASP/Amass)**: A powerful tool for network mapping and attack surface discovery.
+- **[waybackurls](https://github.com/tomnomnom/waybackurls)**: Fetches URLs from the Wayback Machine for a given domain.
+- **[cewl](https://github.com/digininja/CeWL)**: A custom wordlist generator that spiders a given URL to create a wordlist of unique words.
 
 ## Features
 
 - **Subdomain Enumeration**: Uses `subfinder` and `assetfinder` to gather subdomains.
 - **HTTP Response Verification**: Uses `httpx` to check which subdomains are live and responding.
 - **Comprehensive Discovery**: Uses `amass` for additional subdomain enumeration and asset discovery.
+- **Historical URLs**: Uses `waybackurls` to fetch historical URLs from the Wayback Machine.
+- **Wordlist Generation**: Uses `cewl` to generate a wordlist based on the domain and its subdomains.
 
 ## Prerequisites
 
@@ -55,6 +29,8 @@ Before running the script, ensure that you have the following tools installed:
 - [httpx](https://github.com/projectdiscovery/httpx)
 - [assetfinder](https://github.com/tomnomnom/assetfinder)
 - [amass](https://github.com/OWASP/Amass)
+- [waybackurls](https://github.com/tomnomnom/waybackurls)
+- [cewl](https://github.com/digininja/CeWL)
 
 You can install these tools using the following commands:
 
@@ -70,3 +46,9 @@ go install github.com/tomnomnom/assetfinder@latest
 
 # Install amass
 go install github.com/OWASP/Amass/v3/...@latest
+
+# Install waybackurls
+go install github.com/tomnomnom/waybackurls@latest
+
+# Install cewl
+sudo apt-get install cewl
