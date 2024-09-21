@@ -23,7 +23,7 @@ do
     case $arg in
         -h|--help)
         echo -e "$lightblue 
-Subscan4 - This script uses the following 4 tools (Sublister, Amass, Assetfinder, Httpx) to enumerate the target subdomains."
+Reko - This script uses the following 4 tools (Sublister, Amass, Assetfinder, Httpx) to enumerate the target subdomains."
         echo " "
         echo "$0 [options]"
         echo " "
